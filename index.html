@@ -1,3 +1,17 @@
+<!DOCTYPE html>
+  <html><head>  <meta charset="UTF-8"> <title>students</title>
+  </head>
+
+  <body style='margin-left: 30px;'>
+     <h1>Select a Major</h1>
+
+     <input type="button" id='btnCIT' value="CIT Majors">
+	 <input type="button" id='btnBUS' value="Business Majors">
+	 
+	 <p>We filter our dataset by major</p>
+  
+     <div id="result"></div> 
+<script>
    document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('#btnCIT').onclick = function() {
             var request = new XMLHttpRequest();
@@ -23,3 +37,6 @@
           request.send(null);
      };
   });
+  </script>
+  </body>
+  </html>
