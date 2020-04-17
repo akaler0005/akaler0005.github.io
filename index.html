@@ -1,17 +1,3 @@
-<!DOCTYPE html>
-  <html><head>  <meta charset="UTF-8"> <title>students</title>
-  </head>
-
-  <body style='margin-left: 30px;'>
-     <h1>Select a Major</h1>
-
-     <input type="button" id='btnCIT' value="CIT Majors">
-	 <input type="button" id='btnBUS' value="Business Majors">
-	 
-	 <p>We filter our dataset by major</p>
-  
-     <div id="result"></div> 
-<script>
    document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('#btnCIT').onclick = function() {
             var request = new XMLHttpRequest();
@@ -36,30 +22,4 @@
           }
           request.send(null);
      };
-	 document.querySelector('#btnBUS').onclick = function() {
-            var request = new XMLHttpRequest();
-            request.open('GET', 'cit5students.json');
-			
-			request.onload = function() {
-                var data = JSON.parse(request.responseText);
-                if (request.status == 200) {
-						var contents = "<table cellspacing='5'><tr><td>Name</td><td>Major</td><td>Midterm</td><td>final</td></tr>"
-							for(i = 0; i < data.length; i++) {
-								if (data[i].major == BUS){
-									contents += "<tr><td>" + data[i].name + "</td><td>" + data[i].major + "</td><td>" + data[i].midterm + "</td><td>" + data[i].final + "</td></tr>";
-								}
-							}
-                     contents += "</table>";
-                
-                     document.querySelector('#result').innerHTML = contents;
-                }
-                else {
-                    document.querySelector('#result').innerHTML = "There was an error.";
-                }
-          }
-          request.send(null);
-     };
   });
-  </script>
-  </body>
-  </html>
