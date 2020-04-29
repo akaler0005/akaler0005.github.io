@@ -17,10 +17,10 @@
     <div>
          <ul class="nav navbar-nav">
              <li class="active"><a href="index.html">All Advisees</a></li>
-             <li><a href="all_cars.html">Grade Point Averages</a></li>
+             <li><a href="gpa.html">Grade Point Averages</a></li>
          </ul>
     </div>
-    </nav>    <!-- end nav-bar -->
+    </nav>
 
     <div ng-controller = "allCtrl">
 
@@ -31,7 +31,7 @@
              <th>id</th> <th>last name</th> <th>first name</th> <th>credit hrs</th> <th>gpa points</th> <th>major</th>
            </tr>
   
-           <tr ng-repeat = "students in students | filter:search_text">  <!-- filter by search textbox value -->
+           <tr ng-repeat = "students in students | filter:search_text">
                <td>{{students.id}}</td>
                <td>{{students.last_name}}</td>
                <td>{{students.first_name}}</td>
@@ -40,16 +40,16 @@
                <td>{{students.major}}</td>
            </tr>
        </table>
-     </div>   <!-- end carsApp -->
-  </div>   <!-- end class= 'container' -->
+     </div>
+  </div>
 
   <script>
       var app = angular.module('studentsApp', []);
       app.controller('allCtrl', function($scope, $http) {
   
-          $http.get("students.json")          // get all the car data
+          $http.get("students.json")
           .then(function (response) {
-               $scope.students = response.data;    // put the data in the table
+               $scope.students = response.data;
           });
 
        });
