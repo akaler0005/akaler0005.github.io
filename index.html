@@ -28,13 +28,13 @@
        <p><input type='text' ng-model='search_text' > Enter Search text</p>
        <table class="table table-bordered table-striped">
            <tr>
-             <th>id</th> <th>first_name</th> <th>last_name</th> <th>credit_hrs</th> <th>gpa_points</th> <th>major</th>
+             <th>id</th> <th>last name</th> <th>first name</th> <th>credit hrs</th> <th>gpa points</th> <th>major</th>
            </tr>
   
            <tr ng-repeat = "students in students | filter:search_text">  <!-- filter by search textbox value -->
                <td>{{students.id}}</td>
-               <td>{{students.first_name}}</td>
                <td>{{students.last_name}}</td>
+               <td>{{students.first_name}}</td>
                <td>{{students.credit_hrs}}</td>
                <td>{{students.gpa_points}}</td>
                <td>{{students.major}}</td>
